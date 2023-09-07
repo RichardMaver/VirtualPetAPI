@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Virtual Pets</h1>
+    <table>
+        <tr>
+            <th>Pet Id</th>
+            <th>Pet Type</th>
+            <th>Pet Name</th>
+            <th>Description</th>
+            <th>Hunger</th>
+            <th>Thirst</th>
+            <th>Boredom</th>
+        </tr>
+        <tr th:each="virtualPet: ${virtualPets}">
+            <td th:text="${virtualPet.id}"/>
+            <td th:text="${virtualPet.petType}"/>
+            <td th:text="${virtualPet.petName}"/>
+            <td th:text="${virtualPet.petDescription}"/>
+            <td th:text="${virtualPet.hunger}"/>
+            <td th:text="${virtualPet.thirst}"/>
+            <td th:text="${virtualPet.boredom}"/>
+        </tr>
+    </table>
+</body>
+</html>
